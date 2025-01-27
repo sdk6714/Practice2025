@@ -13,42 +13,89 @@ body {
     background-repeat: no-repeat; /* Prevents the image from repeating */
 }
 
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('4DD5637D-57DC-4286-B67E-C00710F43EB9.jpeg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Login Container */
 .login-container {
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     text-align: center;
+    width: 100%;
+    max-width: 350px; /* Limit width for better readability */
 }
 
 .login-container h2 {
     margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
 }
 
-.login-container label {
-    display: block;
-    margin-bottom: 5px;
-}
-
+/* Input Fields */
 .login-container input {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.login-container input:focus {
+    border-color: #007bff; /* Highlight on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Glow effect */
+}
+
+/* Login Button */
 .login-container button {
-    padding: 10px 20px;
+    width: 100%;
+    padding: 12px;
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .login-container button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Darker on hover */
+}
+
+/* Optional: Add Icons to Input Fields */
+.login-container .input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.login-container .input-group input {
+    padding-left: 40px; /* Space for icon */
+}
+
+.login-container .input-group i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    font-size: 18px;
 }
 
 /* Completely Invisible Button */
@@ -56,25 +103,34 @@ body {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 100px; /* Button size */
-    height: 100px; /* Button size */
-    background-color: transparent; /* No background color */
-    border: none; /* No border */
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border: none;
     cursor: pointer;
 }
 
 /* Second Page Styles */
 .content {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 350px;
+}
+
+.content h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 .content a {
     color: #007bff;
     text-decoration: none;
+    font-size: 16px;
 }
 
 .content a:hover {
