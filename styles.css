@@ -53,8 +53,8 @@ body {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 100px; /* Button size */
-    height: 100px; /* Button size */
+    width: 30px; /* Button size */
+    height: 30px; /* Button size */
     background-color: transparent; /* No background color */
     border: none; /* No border */
     cursor: pointer;
