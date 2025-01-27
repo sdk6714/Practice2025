@@ -51,10 +51,10 @@ body {
 /* Completely Invisible Button */
 .invisible-button {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 30px; /* Button size */
-    height: 30px; /* Button size */
+    bottom: 10px;
+    right: 10px;
+    width: 10px; /* Button size */
+    height: 10px; /* Button size */
     background-color: transparent; /* No background color */
     border: none; /* No border */
     cursor: pointer;
