@@ -3,40 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RTSP Stream Embed</title>
+  <title>RTMP Stream</title>
+  
+  <!-- Video.js CSS -->
+  <link href="https://vjs.zencdn.net/7.22.4/video-js.css" rel="stylesheet">
+  
+  <!-- Video.js JavaScript -->
+  <script src="https://vjs.zencdn.net/7.22.4/video.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-flash/dist/videojs-flash.min.js"></script>
 </head>
 <body>
-  <h1>RTSP Stream</h1>
-  <iframe 
-    src="https://rtsp.me/embed/8reD7B6d/" 
-    width="640" 
-    height="360" 
-    frameborder="0" 
-    allowfullscreen>
-  </iframe>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RTSP Stream Embed</title>
-</head>
-<body>
-  <h1>RTSP Stream</h1>
-  <iframe 
-    src="https://rtsp.me/embed/8reD7B6d/" 
-    width="640" 
-    height="360" 
-    frameborder="0" 
-    allowfullscreen>
-  </iframe>
 
-    <div class="content">
-        <h1>Welcome to the Second Page!</h1>
-        <p>You clicked the invisible button to get here.</p>
-        <a href="index.html">Go back to Login Page</a>
-    </div>
+  <!-- Video Player -->
+  <video id="rtmp-video" class="video-js vjs-default-skin" controls autoplay width="640" height="360">
+    <source src="rtmp://71.3.194.4:554/profile1" type="rtmp/mp4">
+  </video>
+
+  <script>
+    // Initialize the Video.js player
+    videojs('rtmp-video', {
+      techOrder: ['flash', 'html5'], // Flash is required for RTMP
+      autoplay: true,
+      controls: true
+    });
+  </script>
+
 </body>
 </html>
