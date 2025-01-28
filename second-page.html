@@ -1,7 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <iframe width="337" height="246" src="https://rtsp.me/embed/29SZ9bHE/" frameborder="0" allowfullscreen></iframe>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HLS Video Player</title>
+</head>
+<body>
+  <h1>HLS Video Player</h1>
+  <video id="video" controls width="640" height="360" poster="poster.jpg"></video>
+
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const video = document.getElementById('video');
+      const hlsUrl = '/1.m3u8';
+
+      if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(hlsUrl);
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, function () {
+          video.play();
+        });
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        // Fallback for Safari
+        video.src = hlsUrl;
+        video.addEventListener('loadedmetadata', function () {
+          video.play();
+        });
+      } else {
+        alert('Your browser does not support HLS.');
+      }
+    });
+  </script>
+</body>
+</html>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Second Page</title>
