@@ -3,29 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RTMP Stream</title>
-  
-  <!-- Video.js CSS -->
-  <link href="https://vjs.zencdn.net/7.22.4/video-js.css" rel="stylesheet">
-  
-  <!-- Video.js JavaScript -->
-  <script src="https://vjs.zencdn.net/7.22.4/video.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/videojs-flash/dist/videojs-flash.min.js"></script>
+  <title>HLS Stream with hls.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </head>
 <body>
 
-  <!-- Video Player -->
-  <video id="rtmp-video" class="video-js vjs-default-skin" controls autoplay width="640" height="360">
-    <source src="rtmp://71.3.194.4:554/profile1" type="rtmp/mp4">
-  </video>
+  <h1>HLS Stream Player</h1>
+  <video id="hls-video" controls autoplay width="640" height="360"></video>
 
   <script>
-    // Initialize the Video.js player
-    videojs('rtmp-video', {
-      techOrder: ['flash', 'html5'], // Flash is required for RTMP
-      autoplay: true,
-      controls: true
-    });
+    const video = document.getElementById('hls-video');
+    const hlsUrl = 'http://192.168.0.27/1.m3u8';
+
+    if (Hls.isSupported()) {
+      const hls = new Hls();
+      hls.loadSource(hlsUrl);
+      hls.attachMedia(video);
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      video.src = hlsUrl;
+    } else {
+      alert('Your browser does not support HLS streaming.');
+    }
   </script>
 
 </body>
