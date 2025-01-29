@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HLS Stream</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play .m3u8 File in HTML5 video player</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+   <!-- Include the hls.js library -->
 
-  </script>
- <iframe width="640" height="480" src="https://rtsp.me/embed/NANbNzD4/" frameborder="0" title="RTSP Stream Player" allowfullscreen>
-Iframes not supported. Broadcasting <a href="https://rtsp.me/en/" title = "rtsp video steaming service">RTSP.ME</a> player </iframe>
+<!-- Create a video element -->
+<video id="video" controls></video>
+
+<!-- Use hls.js to create a player and load the .m3u8 file -->
+<script>
+  var video = document.getElementById('video');
+  if(Hls.isSupported()) {
+    var hls = new Hls();
+    hls.loadSource('http://71.3.194.4/1.m3u8');
+    hls.attachMedia(video);
+    video.play();
+  }
+  else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = 'http://71.3.194.4/1.m3u8';
+    video.addEventListener('loadedmetadata',function() {
+      video.play();
+    });
+  }
+ 
+</script>
+
 </body>
 </html>
