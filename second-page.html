@@ -6,33 +6,7 @@
   <title>HLS Stream</title>
 </head>
 <body>
-  <h1>HLS Video Stream</h1>
-  <video id="video" controls width="640" height="360" poster="poster.jpg"></video>
 
-  <!-- Include hls.js library -->
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const video = document.getElementById('video');
-      const hlsUrl = 'http://192.168.0.27/1.m3u8'; // The HLS stream URL
-
-      if (Hls.isSupported()) {
-        const hls = new Hls();
-        hls.loadSource(hlsUrl);
-        hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED, function () {
-          video.play();
-        });
-      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        // Fallback for Safari, which natively supports HLS
-        video.src = hlsUrl;
-        video.addEventListener('loadedmetadata', function () {
-          video.play();
-        });
-      } else {
-        alert('Your browser does not support HLS.');
-      }
-    });
   </script>
  <iframe width="640" height="480" src="https://rtsp.me/embed/NANbNzD4/" frameborder="0" title="RTSP Stream Player" allowfullscreen>
 Iframes not supported. Broadcasting <a href="https://rtsp.me/en/" title = "rtsp video steaming service">RTSP.ME</a> player </iframe>
