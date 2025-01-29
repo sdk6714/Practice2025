@@ -3,27 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HLS Stream with hls.js</title>
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <title>HLS Stream with Video.js</title>
+  
+  <!-- Video.js CSS -->
+  <link href="//vjs.zencdn.net/8.21.1/video-js.min.css" rel="stylesheet">
+
+  <!-- Video.js JavaScript -->
+  <script src="//vjs.zencdn.net/8.21.1/video.min.js"></script>
 </head>
 <body>
 
-  <h1>HLS Stream Player</h1>
-  <video id="hls-video" controls autoplay width="640" height="360"></video>
+  <h1>HLS Stream with Video.js</h1>
+
+  <!-- Video.js player -->
+  <video id="video" class="video-js vjs-default-skin" controls autoplay width="640" height="360">
+    <source src="http://192.168.0.27/1.m3u8" type="application/x-mpegURL">
+    Your browser does not support the video tag.
+  </video>
 
   <script>
-    const video = document.getElementById('hls-video');
-    const hlsUrl = 'http://192.168.0.27/1.m3u8';
-
-    if (Hls.isSupported()) {
-      const hls = new Hls();
-      hls.loadSource(hlsUrl);
-      hls.attachMedia(video);
-    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-      video.src = hlsUrl;
-    } else {
-      alert('Your browser does not support HLS streaming.');
-    }
+    // Initialize the Video.js player
+    const player = videojs('video');
+    
+    // Enable HLS support (video.js >= 7.0 supports HLS out of the box)
+    player.ready(function() {
+      console.log('Video.js is ready');
+    });
   </script>
 
 </body>
