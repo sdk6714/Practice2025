@@ -3,9 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Watch.js</title>
+  <title>HLS Stream with Video.js</title>
 
-  <!-- Video.js player -->
+  <!-- Video.js CSS from CDN -->
+  <link href="https://vjs.zencdn.net/8.21.1/video-js.css" rel="stylesheet">
+
+  <!-- Video.js JavaScript from CDN -->
+  <script src="https://vjs.zencdn.net/8.21.1/video.min.js"></script>
+</head>
+<body>
+
+  <h1>HLS Stream with Video.js</h1>
+
+  <!-- Video.js Player -->
   <video id="video" class="video-js vjs-default-skin" controls autoplay width="640" height="360">
     <source src="http://192.168.0.27/1.m3u8" type="application/x-mpegURL">
     Your browser does not support the video tag.
@@ -13,10 +23,11 @@
 
   <script>
     // Initialize the Video.js player
-    const player = videojs('video');
+    var player = videojs('video');
 
+    // Log when the player is ready
     player.ready(function() {
-      console.log('Video.js is ready');
+      console.log('Video.js player is ready.');
     });
   </script>
 
