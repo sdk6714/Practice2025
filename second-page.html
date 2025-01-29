@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HLS Stream with Video.js</title>
-  
-  <!-- Video.js CSS -->
-  <link href="//vjs.zencdn.net/8.21.1/video-js.min.css" rel="stylesheet">
 
-  <!-- Video.js JavaScript -->
-  <script src="//vjs.zencdn.net/8.21.1/video.min.js"></script>
+  <!-- Video.js CSS (CDN) -->
+  <link href="https://vjs.zencdn.net/8.21.1/video-js.css" rel="stylesheet">
+
+  <!-- Video.js JS (CDN) -->
+  <script src="https://vjs.zencdn.net/8.21.1/video.min.js"></script>
 </head>
 <body>
 
@@ -24,8 +24,7 @@
   <script>
     // Initialize the Video.js player
     const player = videojs('video');
-    
-    // Enable HLS support (video.js >= 7.0 supports HLS out of the box)
+
     player.ready(function() {
       console.log('Video.js is ready');
     });
