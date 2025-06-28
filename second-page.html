@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <iframe width="640" height="480" src="https://rtsp.me/embed/nSe6KDeQ/" frameborder="0" title="RTSP Stream Player" allowfullscreen>
-Iframes not supported. Broadcasting <a href="https://rtsp.me/" title = "rtsp video steaming service"> rtsp.me</a> player </iframe>
-  else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-    video.src = 'http://71.3.194.4/1.m3u8';
-    video.addEventListener('loadedmetadata',function() {
-      video.play();
-    });
-  }
- 
-</script>
+  <meta charset="UTF-8">
+  <title>Live Stream Page</title>
+</head>
+<body>
+  <h1>Live RTSP Stream</h1>
+
+  <!-- Embed the stream from rtsp.me -->
+  <iframe 
+    width="640" 
+    height="480" 
+    src="https://rtsp.me/embed/nSe6KDeQ/" 
+    frameborder="0" 
+    title="RTSP Stream Player" 
+    allowfullscreen>
+  </iframe>
 
 </body>
 </html>
