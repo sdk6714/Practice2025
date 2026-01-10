@@ -1,41 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Add FontAwesome for icons (optional) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Professional pest control, lawn insect control, and lawn & ornamental fertilizing. One company for your home and lawn. Free quotes available.">
+<title>Your Company | Pest, Lawn & Insect Control</title>
+
+<style>
+:root{
+  --bg:#0b1220;
+  --card:#111a30;
+  --text:#eaf0ff;
+  --muted:#a9b4d0;
+  --brand:#4ade80;
+  --brand2:#22c55e;
+  --radius:16px;
+  --shadow:0 20px 45px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:linear-gradient(180deg,#070b14,#0b1220);
+  color:var(--text);
+}
+a{text-decoration:none;color:inherit}
+.container{max-width:1120px;margin:auto;padding:20px}
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(7,11,20,.85);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.header-inner{
+  display:flex;justify-content:space-between;align-items:center;
+}
+.logo{
+  font-weight:900;font-size:18px;
+}
+nav a{
+  margin-left:18px;
+  font-weight:700;
+  color:var(--muted);
+}
+nav a:hover{color:white}
+.btn{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:999px;
+  font-weight:900;
+  background:var(--brand);
+  color:#04210f;
+}
+.btn.secondary{
+  background:#1e293b;color:white
+}
+.hero{
+  padding:60px 0;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:30px;
+}
+.hero h1{
+  font-size:clamp(32px,4vw,52px);
+  margin:0;
+}
+.hero p{
+  color:var(--muted);
+  max-width:65ch;
+}
+.badges span{
+  display:inline-block;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  margin:6px 6px 0 0;
+  font-weight:800;
+}
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:20px;
+  box-shadow:var(--shadow);
+}
+form input,form select,form textarea{
+  width:100%;
+  margin-top:8px;
+  padding:12px;
+  border-radius:12px;
+  border:none;
+  background:#070b14;
+  color:white;
+}
+form label{font-size:12px;font-weight:900;color:var(--muted)}
+form button{margin-top:14px}
+.section{margin-top:60px}
+.section h2{font-size:28px;margin-bottom:10px}
+.services{
+  display:grid;
+  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+}
+.service{
+  background:var(--card);
+  padding:20px;
+  border-radius:var(--radius);
+}
+.tag{
+  display:inline-block;
+  font-size:12px;
+  font-weight:900;
+  color:var(--brand);
+  margin-bottom:6px;
+}
+footer{
+  margin-top:60px;
+  padding:20px 0;
+  border-top:1px solid rgba(255,255,255,.1);
+  color:var(--muted);
+  font-size:14px;
+}
+@media(min-width:900px){
+  .hero{grid-template-columns:1.1fr .9fr}
+}
+</style>
 </head>
+
 <body>
-    <div class="login-container">
-        <h2>Login</h2>
-        <form id="loginForm">
-            <!-- Username Field with Icon -->
-            <div class="input-group">
-                <i class="fas fa-user"></i>
-                <input type="text" id="username" name="username" placeholder="Username" required>
-            </div>
-            <!-- Password Field with Icon -->
-            <div class="input-group">
-                <i class="fas fa-lock"></i>
-                <input type="password" id="password" name="password" placeholder="Password" required>
-            </div>
-            <!-- Login Button -->
-            <button type="submit">Login</button>
-        </form>
+
+<header>
+  <div class="container header-inner">
+    <div class="logo">YOUR COMPANY</div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#bundles">Bundles</a>
+      <a href="#quote">Free Quote</a>
+    </nav>
+    <a href="tel:+18005551234" class="btn secondary">(800) 555-1234</a>
+  </div>
+</header>
+
+<main class="container">
+
+<section class="hero">
+  <div>
+    <h1>One company for pests, lawn insects, and a healthier landscape.</h1>
+    <p>
+      Professional <strong>pest control</strong>, <strong>lawn insect control</strong>,
+      and <strong>lawn & ornamental fertilizing</strong>.  
+      Clear plans. Consistent results. One trusted provider.
+    </p>
+
+    <div class="badges">
+      <span>Pest Control</span>
+      <span>Lawn Insects</span>
+      <span>Fertilizing & Weeds</span>
+      <span>Ornamentals</span>
     </div>
 
-    <!-- Invisible Button -->
-    <a href="second-page.html" class="invisible-button"></a>
+    <div style="margin-top:20px">
+      <a href="#quote" class="btn">Get a Free Quote</a>
+    </div>
+  </div>
 
-    <script>
-        // Optional: Add JavaScript to handle form submission
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Login functionality is not implemented in this example.');
-        });
-    </script>
+  <div class="card" id="quote">
+    <h3>Request a Free Quote</h3>
+    <form>
+      <label>Name</label>
+      <input placeholder="Your name" required>
+
+      <label>Phone</label>
+      <input placeholder="(555) 123-4567" required>
+
+      <label>ZIP Code</label>
+      <input placeholder="33952" required>
+
+      <label>I need help with</label>
+      <select required>
+        <option disabled selected>Select one</option>
+        <option>Pest Control (Home)</option>
+        <option>Lawn Insect Control</option>
+        <option>Lawn Fertilizing & Weed Control</option>
+        <option>Bundle: Pest + Lawn</option>
+        <option>Not Sure</option>
+      </select>
+
+      <label>Details (optional)</label>
+      <textarea placeholder="Fire ants, chinch bugs, weeds, ants inside, pets, etc."></textarea>
+
+      <button class="btn" type="submit">Submit Request</button>
+    </form>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <h2>Our Services</h2>
+
+  <div class="services">
+    <div class="service">
+      <div class="tag">Pest Control</div>
+      <h3>Home Pest Protection</h3>
+      <p>
+        Control ants, roaches, spiders, silverfish, wasps, and other common
+        household pests using targeted interior and exterior treatments.
+      </p>
+    </div>
+
+    <div class="service">
+      <div class="tag">Lawn Insects</div>
+      <h3>Lawn Insect Control</h3>
+      <p>
+        Treatments for chinch bugs, armyworms, sod webworms,
+        fleas, ticks, mole crickets, and fire ants.
+        Applied to soil and turf where insects live and feed.
+      </p>
+    </div>
+
+    <div class="service">
+      <div class="tag">Lawn Care</div>
+      <h3>Lawn & Ornamental Fertilizing</h3>
+      <p>
+        Fertilization, weed control, and ornamental shrub care
+        designed to keep your landscape healthy and green year-round.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="bundles">
+  <h2>Bundle & Save</h2>
+
+  <div class="services">
+    <div class="service">
+      <h3>Pest + Lawn Insects</h3>
+      <p>
+        Home pest protection combined with seasonal lawn insect treatments
+        for complete indoor and outdoor coverage.
+      </p>
+    </div>
+
+    <div class="service">
+      <h3>Lawn Care Program</h3>
+      <p>
+        Fertilization, weed control, and lawn insect protection
+        scheduled throughout the growing season.
+      </p>
+    </div>
+
+    <div class="service">
+      <h3>Complete Home & Lawn</h3>
+      <p>
+        Pest control, lawn insects, fertilizing, and ornamentals—
+        one company, one schedule, better value.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> YOUR COMPANY • Licensed & Insured  
+  <br>
+  Treatments applied according to label directions.
+</footer>
+
+</main>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
