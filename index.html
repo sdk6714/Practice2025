@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Professional pest control, lawn insect control, and lawn & ornamental fertilizing. One company for your home and lawn. Free quotes available." />
-<title>Your Company | Pest + Lawn & Ornamental</title>
+<meta name="description" content="Bug N Lawn provides pest control, lawn insect control, and lawn & ornamental fertilizing. One company for your home and lawn. Free quotes available." />
+<title>Bug N Lawn | Pest + Lawn & Ornamental</title>
 
 <style>
   :root{
@@ -16,7 +16,6 @@
     --bg:   #070b14;
     --bg2:  #0b1220;
     --card: rgba(255,255,255,.06);
-    --card2: rgba(255,255,255,.08);
     --text: #eaf0ff;
     --muted:#a9b4d0;
 
@@ -42,6 +41,24 @@
   .container{max-width:var(--max); margin:0 auto; padding: 18px}
   .sr-only{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
 
+  /* Brand text coloring */
+  .brandname{
+    font-weight: 1000;
+    letter-spacing: .2px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .brand-bug{color: var(--bug-red)}
+  .brand-lawn{color: var(--lawn-green)}
+  .brand-n{
+    background: linear-gradient(90deg, var(--bug-red), var(--lawn-green));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 1000;
+    padding: 0 .08em; /* tiny spacing so gradient looks nice */
+  }
+
   /* Topbar */
   header{
     position: sticky; top: 0; z-index: 50;
@@ -54,19 +71,16 @@
   }
   .brand{
     display:flex; align-items:center; gap:10px;
-    font-weight: 900;
-    letter-spacing:.2px;
   }
   .mark{
     width: 38px; height: 38px;
     border-radius: 12px;
-    background: linear-gradient(135deg, rgba(22,163,74,.85), rgba(220,38,38,.85));
+    background: linear-gradient(135deg, rgba(220,38,38,.85), rgba(22,163,74,.85));
     box-shadow: 0 12px 28px rgba(0,0,0,.35);
     display:grid; place-items:center;
     border: 1px solid rgba(255,255,255,.12);
   }
   .brand small{display:block; color: var(--muted); font-weight: 800; line-height:1}
-  .brand strong{display:block; font-weight: 1000}
 
   nav{display:none; gap:18px; color: var(--muted); font-weight: 800}
   nav a:hover{color: var(--text)}
@@ -305,9 +319,14 @@
           <path d="M12 11c2 0 3.5 1.6 3.5 3.6v1.2c0 2-1.6 3.6-3.5 3.6S8.5 17.8 8.5 15.8v-1.2c0-2 1.6-3.6 3.5-3.6Z" stroke="white" stroke-width="2"/>
         </svg>
       </div>
+
       <div>
-        <small>YOUR COMPANY</small>
-        <strong>Pest + Lawn & Ornamental</strong>
+        <div class="brandname" aria-label="Bug N Lawn">
+          <span class="brand-bug">Bug</span>
+          <span class="brand-n">N</span>
+          <span class="brand-lawn">Lawn</span>
+        </div>
+        <small>Pest • Lawn Insects • Fertilizing • Ornamentals</small>
       </div>
     </div>
 
@@ -319,10 +338,7 @@
     </nav>
 
     <div class="top-actions">
-      <a class="pill" href="tel:+18005551234" aria-label="Call us">
-        <span class="sr-only">Call</span>
-        (800) 555-1234
-      </a>
+      <a class="pill" href="tel:+18005551234" aria-label="Call us">(800) 555-1234</a>
       <a class="btn btn-lawn" href="#quote">Get a Free Quote</a>
     </div>
   </div>
@@ -335,13 +351,16 @@
       <h1>
         <span class="accent-green">Greener lawn.</span>
         <span class="accent-red">Fewer bugs.</span>
-        One company.
+        <span>That’s </span>
+        <span class="brandname">
+          <span class="brand-bug">Bug</span><span class="brand-n">N</span><span class="brand-lawn">Lawn</span>
+        </span>.
       </h1>
 
       <p>
         Professional <strong class="accent-red">pest control</strong>, <strong class="accent-red">lawn insect control</strong>,
         and <strong class="accent-green">lawn & ornamental fertilizing</strong>. Clear plans, consistent results,
-        and treatments designed for your property (applied according to label directions).
+        and treatments applied according to label directions.
       </p>
 
       <div class="badges" aria-label="Trust badges">
@@ -359,10 +378,10 @@
       <div class="grid">
         <div class="card">
           <div class="card-pad">
-            <h3 style="margin:0 0 10px;">Why homeowners choose us</h3>
+            <h3 style="margin:0 0 10px;">Why homeowners choose Bug N Lawn</h3>
             <ul style="margin:0; padding-left:18px; color:var(--muted); font-weight:700;">
-              <li><span class="accent-green" style="font-weight:950;">Lawn-first</span> approach: nutrients + timing</li>
-              <li><span class="accent-red" style="font-weight:950;">Targeted pest control</span>: entry points & hotspots</li>
+              <li><span class="accent-green" style="font-weight:950;">Lawn-first</span> timing for nutrition and weeds</li>
+              <li><span class="accent-red" style="font-weight:950;">Targeted pest control</span> for entry points & hotspots</li>
               <li>Bundle savings: one schedule for home + lawn</li>
               <li>Clear communication and honest recommendations</li>
             </ul>
@@ -451,11 +470,11 @@
   <!-- SERVICES -->
   <section class="section" id="services" aria-label="Services">
     <h2>Services</h2>
-    <p class="lead">Green for lawn & ornamentals. Red for pest control and lawn insects. Bundle to save.</p>
+    <p class="lead">Green represents lawn & ornamentals. Red represents bugs and pest control.</p>
 
     <div class="cards3">
       <div class="service">
-        <div class="tag"><span class="dot red"></span> Pest Control</div>
+        <div class="tag"><span class="dot" style="background:var(--bug-red)"></span> Pest Control</div>
         <h3 class="accent-red">Home Pest Protection</h3>
         <p>
           Targeted treatments for common household pests (ants, roaches, spiders, silverfish, and more).
@@ -464,7 +483,7 @@
       </div>
 
       <div class="service">
-        <div class="tag"><span class="dot red"></span> Lawn Insects</div>
+        <div class="tag"><span class="dot" style="background:var(--bug-red)"></span> Lawn Insects</div>
         <h3 class="accent-red">Lawn Insect Control</h3>
         <p>
           Turf pest treatments for <strong>fire ants</strong>, chinch bugs, armyworms, sod webworms,
@@ -473,40 +492,12 @@
       </div>
 
       <div class="service">
-        <div class="tag"><span class="dot green"></span> Lawn & Ornamental</div>
+        <div class="tag"><span class="dot" style="background:var(--lawn-green)"></span> Lawn & Ornamental</div>
         <h3 class="accent-green">Fertilizing, Weeds, & Ornamentals</h3>
         <p>
           Seasonal fertilization and weed control to improve color, density, and overall health.
           Optional shrub and ornamental support for a cleaner landscape.
         </p>
-      </div>
-    </div>
-
-    <div class="grid">
-      <div class="card">
-        <div class="card-pad">
-          <h3 style="margin:0 0 10px;">What you get</h3>
-          <ul style="margin:0; padding-left:18px; color:var(--muted); font-weight:700;">
-            <li>Service plan based on your goals + property conditions</li>
-            <li><span class="accent-red" style="font-weight:950;">Bug-focused</span> treatments where pests are active</li>
-            <li><span class="accent-green" style="font-weight:950;">Lawn-focused</span> timing for nutrition and weeds</li>
-            <li>Clear post-service guidance and optional ongoing programs</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-pad">
-          <h3 style="margin:0 0 10px;">Service area</h3>
-          <p style="margin:0; color:var(--muted);">
-            Replace this with your coverage. Example: “Serving Port Charlotte, Punta Gorda, North Port, Cape Coral, and surrounding areas.”
-          </p>
-          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-            <span class="badge"><span class="dot red"></span> Licensed & insured</span>
-            <span class="badge"><span class="dot green"></span> Seasonal scheduling</span>
-            <span class="badge"><span class="dot red"></span> Bundle savings</span>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -521,34 +512,21 @@
 
     <div class="cards3">
       <div class="service">
-        <div class="tag"><span class="dot red"></span> + <span class="dot red"></span></div>
+        <div class="tag"><span class="dot" style="background:var(--bug-red)"></span> + <span class="dot" style="background:var(--bug-red)"></span></div>
         <h3 class="accent-red">Pest + Lawn Insects</h3>
         <p>Home perimeter pest control plus seasonal lawn insect treatments for fire ants, fleas/ticks, and turf pests.</p>
       </div>
 
       <div class="service">
-        <div class="tag"><span class="dot green"></span> + <span class="dot red"></span></div>
+        <div class="tag"><span class="dot" style="background:var(--lawn-green)"></span> + <span class="dot" style="background:var(--bug-red)"></span></div>
         <h3><span class="accent-green">Lawn Care</span> + <span class="accent-red">Insects</span></h3>
         <p>Fertilization and weed control with added insect protection to keep turf healthier through the season.</p>
       </div>
 
       <div class="service">
-        <div class="tag"><span class="dot red"></span> + <span class="dot green"></span></div>
+        <div class="tag"><span class="dot" style="background:var(--bug-red)"></span> + <span class="dot" style="background:var(--lawn-green)"></span></div>
         <h3>Complete <span class="accent-red">Home</span> & <span class="accent-green">Lawn</span></h3>
         <p>Pest control, lawn insects, fertilizing, and ornamentals—one provider, one plan, better value.</p>
-      </div>
-    </div>
-
-    <div class="card" style="margin-top:14px;">
-      <div class="card-pad" style="display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center;">
-        <div>
-          <h3 style="margin:0 0 6px;">Ready to combine services?</h3>
-          <p style="margin:0; color:var(--muted);">Tell us what you want and we’ll recommend the best bundle.</p>
-        </div>
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn btn-lawn" href="#quote">Get a Quote</a>
-          <a class="btn btn-bug" href="tel:+18005551234">Call Now</a>
-        </div>
       </div>
     </div>
   </section>
@@ -619,13 +597,21 @@
 
   <!-- FOOTER -->
   <footer aria-label="Footer">
-    <div>© <span id="year"></span> YOUR COMPANY • Licensed & insured</div>
+    <div>
+      © <span id="year"></span>
+      <span class="brandname" style="margin-left:6px;">
+        <span class="brand-bug">Bug</span><span class="brand-n">N</span><span class="brand-lawn">Lawn</span>
+      </span>
+      • Licensed & insured
+    </div>
+
     <div class="mini-links">
       <a href="#services">Services</a>
       <a href="#bundles">Bundles</a>
       <a href="#quote">Quote</a>
       <a href="#" onclick="openPolicy(event)">Privacy</a>
     </div>
+
     <div style="flex-basis:100%; margin-top:6px;">
       Treatments are applied according to label directions.
     </div>
@@ -654,8 +640,7 @@
   }
 
   // Form submit (DEMO)
-  // Replace the fetch URL with your backend endpoint when ready.
-  // Example: fetch("https://yourdomain.com/api/lead", ...)
+  // Hook to your backend by replacing the demo section with a fetch("/api/lead") call.
   const form = document.getElementById("quoteForm");
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -670,33 +655,14 @@
       details: document.getElementById("details").value.trim()
     };
 
-    // Basic validation
     const digits = payload.phone.replace(/\D/g,"");
     if (!payload.name || digits.length < 10 || !payload.zip || !payload.interest){
       showToast("Check your info", "Please enter name, valid phone, ZIP, and select what you need help with.");
       return;
     }
 
-    // Demo success (no backend)
-    // To connect to backend, uncomment fetch below and remove demo toast.
     showToast("Request received ✅", "We’ll contact you soon with pricing + availability.");
     form.reset();
-
-    /*
-    try{
-      const res = await fetch("/api/lead", {
-        method:"POST",
-        headers:{ "Content-Type":"application/json" },
-        body: JSON.stringify(payload)
-      });
-      const data = await res.json();
-      if(!data.ok) throw new Error(data.error || "Submit failed");
-      showToast("Request received ✅", "We’ll contact you soon with pricing + availability.");
-      form.reset();
-    }catch(err){
-      showToast("Couldn’t submit online", "Please call (800) 555-1234. " + err.message);
-    }
-    */
   });
 
   function openPolicy(e){
