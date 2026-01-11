@@ -214,4 +214,420 @@
   }
   textarea{min-height: 92px; resize: vertical}
 
-  .
+  .form-actions{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top: 4px}
+  .note{color: var(--muted); font-size: 12px}
+
+  /* Sections */
+  .section{margin-top: 34px}
+  .section h2{margin:0 0 10px; font-size: 26px}
+  .lead{margin:0 0 18px; color: var(--muted); max-width: 78ch}
+
+  .cards3{display:grid; gap:14px; grid-template-columns: 1fr}
+  .service{
+    padding: 16px;
+    border-radius: var(--radius);
+    border: 1px solid rgba(255,255,255,.10);
+    background: var(--card);
+  }
+  .service h3{margin: 6px 0 6px; font-size: 18px}
+  .service p{margin: 0; color: var(--muted)}
+
+  .tag{
+    display:inline-flex; align-items:center; gap:8px;
+    padding: 8px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 950;
+    border: 1px solid rgba(255,255,255,.12);
+    background: rgba(7,11,20,.35);
+    color: var(--muted);
+    width: fit-content;
+  }
+  .tag .dot{width:9px;height:9px;border-radius:999px}
+
+  /* Reviews */
+  .reviews{display:grid; gap:14px; grid-template-columns: 1fr}
+  .review{padding: 16px}
+  .stars{color: #ffd166; letter-spacing: 1px}
+  .review p{margin:10px 0 0; color: var(--muted)}
+  .review .who{margin-top:10px; font-weight: 1000}
+
+  /* FAQ */
+  details{
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 14px;
+    background: var(--card);
+    padding: 12px 14px;
+  }
+  summary{cursor:pointer; font-weight: 1000}
+  details p{margin: 10px 0 0; color: var(--muted)}
+
+  /* Footer */
+  footer{
+    margin-top: 44px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,.10);
+    color: var(--muted);
+    display:flex; flex-wrap:wrap; gap:12px;
+    justify-content: space-between;
+    align-items:center;
+    font-size: 13px;
+  }
+  .mini-links{display:flex; gap:14px; flex-wrap:wrap}
+  .mini-links a:hover{color: var(--text)}
+
+  /* Toast */
+  .toast{
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    max-width: 360px;
+    background: rgba(7,11,20,.92);
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 14px;
+    padding: 12px 12px;
+    box-shadow: var(--shadow);
+    display:none;
+    z-index: 999;
+  }
+  .toast strong{display:block}
+  .toast span{color: var(--muted); font-size: 13px}
+
+  @media (min-width: 860px){
+    nav{display:flex}
+    .hero{grid-template-columns: 1.05fr .95fr; gap:18px; align-items:stretch}
+    .grid{grid-template-columns: 1.05fr .95fr; align-items:stretch}
+    .row2{grid-template-columns: 1fr 1fr}
+    .cards3{grid-template-columns: repeat(3, 1fr)}
+    .reviews{grid-template-columns: repeat(3, 1fr)}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .btn{transition:none}
+    .btn:hover{transform:none}
+  }
+</style>
+</head>
+
+<body>
+<header>
+  <div class="container header-inner">
+    <div class="brand">
+      <div class="mark" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 21c6-1 11-6 12-12C13 9 9 13 8 18c-.2 1.2-.6 2.2-2 3Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M12 11c2 0 3.5 1.6 3.5 3.6v1.2c0 2-1.6 3.6-3.5 3.6S8.5 17.8 8.5 15.8v-1.2c0-2 1.6-3.6 3.5-3.6Z" stroke="white" stroke-width="2"/>
+        </svg>
+      </div>
+
+      <div>
+        <div class="brandname" aria-label="Bug N Lawn">
+          <span class="brand-bug">Bug</span>
+          <span class="brand-n">N</span>
+          <span class="brand-lawn">Lawn</span>
+        </div>
+        <small>Pest • Lawn Insects • Fertilizing • Ornamentals</small>
+      </div>
+    </div>
+
+    <nav aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#bundles">Bundles</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="top-actions">
+      <a class="pill" href="tel:+18005551234" aria-label="Call us">(800) 555-1234</a>
+      <a class="btn btn-lawn" href="#quote">Get a Free Quote</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" aria-label="Hero">
+    <div>
+      <h1>
+        <span class="accent-green">Greener lawn.</span>
+        <span class="accent-red">Fewer bugs.</span>
+        <span>That’s </span>
+        <span class="brandname">
+          <span class="brand-bug">Bug</span><span class="brand-n">N</span><span class="brand-lawn">Lawn</span>
+        </span>.
+      </h1>
+
+      <p>
+        Professional <strong class="accent-red">pest control</strong>, <strong class="accent-red">lawn insect control</strong>,
+        and <strong class="accent-green">lawn & ornamental fertilizing</strong>. Clear plans, consistent results,
+        and treatments applied according to label directions.
+      </p>
+
+      <div class="badges" aria-label="Trust badges">
+        <div class="badge"><span class="dot red"></span>Home pests <span>inside & out</span></div>
+        <div class="badge"><span class="dot red"></span>Lawn insects <span>fire ants, chinch bugs, more</span></div>
+        <div class="badge"><span class="dot green"></span>Fertilizing <span>& weed control</span></div>
+        <div class="badge"><span class="dot green"></span>Ornamentals <span>shrubs & landscape</span></div>
+      </div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;">
+        <a class="btn btn-lawn" href="#quote">Get My Quote</a>
+        <a class="btn btn-bug" href="#services">See Services</a>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="card-pad">
+            <h3 style="margin:0 0 10px;">Why homeowners choose Bug N Lawn</h3>
+            <ul style="margin:0; padding-left:18px; color:var(--muted); font-weight:700;">
+              <li><span class="accent-green" style="font-weight:950;">Lawn-first</span> timing for nutrition and weeds</li>
+              <li><span class="accent-red" style="font-weight:950;">Targeted pest control</span> for entry points & hotspots</li>
+              <li>Bundle savings: one schedule for home + lawn</li>
+              <li>Clear communication and honest recommendations</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card quote" id="quote">
+          <h2>Free quote in minutes</h2>
+          <p>Select pest, lawn, lawn insects, or a bundle—and we’ll send pricing + availability.</p>
+
+          <!-- ✅ FORM NOW SENDS TO FORMSPREE -->
+          <form
+            id="quoteForm"
+            action="https://formspree.io/f/mzzvwjyk"
+            method="POST"
+          >
+            <!-- Helpful subject line in the email you receive -->
+            <input type="hidden" name="_subject" value="New Lead - Bug N Lawn" />
+            <!-- Simple honeypot spam trap -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+            <div class="row2">
+              <div>
+                <label for="name">Full name</label>
+                <input id="name" name="name" autocomplete="name" placeholder="Your name" required />
+              </div>
+              <div>
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="(555) 123-4567" required />
+              </div>
+            </div>
+
+            <div class="row2">
+              <div>
+                <label for="zip">ZIP code</label>
+                <input id="zip" name="zip" inputmode="numeric" autocomplete="postal-code" placeholder="33952" required />
+              </div>
+              <div>
+                <label for="interest">I need help with</label>
+                <select id="interest" name="interest" required>
+                  <option value="" selected disabled>Select one</option>
+                  <option>Pest Control (Home)</option>
+                  <option>Lawn Insect Control</option>
+                  <option>Lawn Fertilizing & Weed Control</option>
+                  <option>Ornamentals / Shrubs</option>
+                  <option>Bundle: Pest + Lawn</option>
+                  <option>Not sure</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row2">
+              <div>
+                <label for="pest">If pests: what are you seeing?</label>
+                <select id="pest" name="pest">
+                  <option value="" selected>Choose (optional)</option>
+                  <option>Ants</option>
+                  <option>Roaches</option>
+                  <option>Spiders</option>
+                  <option>Wasps</option>
+                  <option>Rodents</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="lawn">If lawn: what do you need help with?</label>
+                <select id="lawn" name="lawn">
+                  <option value="" selected>Choose (optional)</option>
+                  <option>Fertilizing & nutrients</option>
+                  <option>Weed control</option>
+                  <option>Lawn insects (chinch bugs, armyworms, etc.)</option>
+                  <option>Fire ants</option>
+                  <option>Improve bare or stressed areas</option>
+                  <option>Not sure</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="details">Details (optional)</label>
+              <textarea id="details" name="details" placeholder="Tell us what you’re seeing (inside/outside, lawn type, irrigation, pets, etc.)."></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-lawn" type="submit">Request Quote</button>
+              <a class="btn btn-bug" href="tel:+18005551234">Call Now</a>
+              <span class="note">By submitting, you agree to be contacted about your request.</span>
+            </div>
+          </form>
+          <!-- ✅ END FORMSPREE FORM -->
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services" aria-label="Services">
+    <h2>Services</h2>
+    <p class="lead">Green represents lawn & ornamentals. Red represents bugs and pest control.</p>
+
+    <div class="cards3">
+      <div class="service">
+        <div class="tag"><span class="dot" style="background:var(--bug-red)"></span> Pest Control</div>
+        <h3 class="accent-red">Home Pest Protection</h3>
+        <p>Targeted treatments for common household pests (ants, roaches, spiders, silverfish, and more).</p>
+      </div>
+
+      <div class="service">
+        <div class="tag"><span class="dot" style="background:var(--bug-red)"></span> Lawn Insects</div>
+        <h3 class="accent-red">Lawn Insect Control</h3>
+        <p>Turf pest treatments for fire ants, chinch bugs, armyworms, sod webworms, mole crickets, fleas, and ticks.</p>
+      </div>
+
+      <div class="service">
+        <div class="tag"><span class="dot" style="background:var(--lawn-green)"></span> Lawn & Ornamental</div>
+        <h3 class="accent-green">Fertilizing, Weeds, & Ornamentals</h3>
+        <p>Seasonal fertilization and weed control to improve color, density, and overall health.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUNDLES -->
+  <section class="section" id="bundles" aria-label="Bundles">
+    <h2>Bundle & save</h2>
+    <p class="lead">One schedule for everything: <span class="accent-red" style="font-weight:950;">bugs</span> + <span class="accent-green" style="font-weight:950;">lawn</span>.</p>
+
+    <div class="cards3">
+      <div class="service">
+        <div class="tag"><span class="dot" style="background:var(--bug-red)"></span> + <span class="dot" style="background:var(--bug-red)"></span></div>
+        <h3 class="accent-red">Pest + Lawn Insects</h3>
+        <p>Home perimeter pest control plus seasonal lawn insect treatments.</p>
+      </div>
+
+      <div class="service">
+        <div class="tag"><span class="dot" style="background:var(--lawn-green)"></span> + <span class="dot" style="background:var(--bug-red)"></span></div>
+        <h3><span class="accent-green">Lawn Care</span> + <span class="accent-red">Insects</span></h3>
+        <p>Fertilization and weed control with added insect protection.</p>
+      </div>
+
+      <div class="service">
+        <div class="tag"><span class="dot" style="background:var(--bug-red)"></span> + <span class="dot" style="background:var(--lawn-green)"></span></div>
+        <h3>Complete <span class="accent-red">Home</span> & <span class="accent-green">Lawn</span></h3>
+        <p>Pest control, lawn insects, fertilizing, and ornamentals—one provider.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section" id="reviews" aria-label="Reviews">
+    <h2>What customers say</h2>
+    <p class="lead">Replace these with your real reviews once you’ve collected them.</p>
+
+    <div class="reviews">
+      <div class="card review">
+        <div class="stars" aria-label="5 star rating">★★★★★</div>
+        <p>“Our lawn thickened up and the fire ant activity dropped fast.”</p>
+        <div class="who">— Jamie R.</div>
+      </div>
+
+      <div class="card review">
+        <div class="stars" aria-label="5 star rating">★★★★★</div>
+        <p>“No pushy upsells. They explained what the lawn needed and handled roaches.”</p>
+        <div class="who">— Chris T.</div>
+      </div>
+
+      <div class="card review">
+        <div class="stars" aria-label="5 star rating">★★★★★</div>
+        <p>“Bundle is worth it—one company for everything.”</p>
+        <div class="who">— Alex M.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq" aria-label="FAQ">
+    <h2>FAQ</h2>
+    <p class="lead">Quick answers for home pests, lawn insects, and lawn care.</p>
+
+    <div style="display:grid; gap:12px;">
+      <details>
+        <summary>Do you treat lawn insects like fire ants and chinch bugs?</summary>
+        <p>Yes—lawn insect treatments can target common turf pests such as fire ants, chinch bugs, and more.</p>
+      </details>
+
+      <details>
+        <summary>Can I bundle pest control with lawn fertilizing?</summary>
+        <p>Absolutely. Bundles are popular because you get one schedule, consistent service, and better overall value.</p>
+      </details>
+
+      <details>
+        <summary>Is it safe for kids and pets?</summary>
+        <p>We apply products according to label directions and provide post-service guidance.</p>
+      </details>
+
+      <details>
+        <summary>How quickly can you come out?</summary>
+        <p>Availability varies by week, but we aim for fast communication and scheduling whenever possible.</p>
+      </details>
+    </div>
+  </section>
+
+  <footer aria-label="Footer">
+    <div>
+      © <span id="year"></span>
+      <span class="brandname" style="margin-left:6px;">
+        <span class="brand-bug">Bug</span><span class="brand-n">N</span><span class="brand-lawn">Lawn</span>
+      </span>
+      • Licensed & insured
+    </div>
+
+    <div class="mini-links">
+      <a href="#services">Services</a>
+      <a href="#bundles">Bundles</a>
+      <a href="#quote">Quote</a>
+      <a href="#" onclick="openPolicy(event)">Privacy</a>
+    </div>
+
+    <div style="flex-basis:100%; margin-top:6px;">
+      Treatments are applied according to label directions.
+    </div>
+  </footer>
+</main>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  function openPolicy(e){
+    e.preventDefault();
+    alert("Privacy Policy placeholder:\n\nAdd your privacy policy here (data use, contact consent, etc.).");
+  }
+  window.openPolicy = openPolicy;
+</script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/696330e8556653197fb5dd6d/1jelne2st';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+</body>
+</html>
