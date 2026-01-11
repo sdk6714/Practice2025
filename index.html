@@ -3,673 +3,310 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Bug N Lawn provides pest control, lawn insect control, and lawn & ornamental fertilizing. One company for your home and lawn. Free quotes available." />
+<meta name="description" content="Bug N Lawn provides pest control, lawn insect control, and lawn & ornamental fertilizing. One company for your home and lawn." />
 <title>Bug N Lawn | Pest + Lawn & Ornamental</title>
 
 <style>
-  :root{
-    /* Color scheme (site-wide) */
-    --lawn-green: #16a34a;   /* green = lawn/ornamental */
-    --bug-red:    #dc2626;   /* red = pests/bugs */
+:root{
+  /* Brand colors */
+  --bug-red:#dc2626;
+  --lawn-green:#16a34a;
 
-    /* Neutrals */
-    --bg:   #070b14;
-    --bg2:  #0b1220;
-    --card: rgba(255,255,255,.06);
-    --text: #eaf0ff;
-    --muted:#a9b4d0;
+  /* Light theme */
+  --bg:#ffffff;
+  --card:#f8fafc;
+  --border:#e5e7eb;
+  --text:#0f172a;
+  --muted:#475569;
 
-    --radius: 16px;
-    --shadow: 0 18px 48px rgba(0,0,0,.45);
+  --radius:16px;
+  --shadow:0 10px 30px rgba(0,0,0,.08);
+  --max:1120px;
+}
 
-    --max: 1120px;
-  }
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background: var(--bg);
+  color: var(--text);
+  line-height:1.55;
+}
 
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0}
-  body{
-    font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
-    color: var(--text);
-    background:
-      radial-gradient(900px 520px at 12% -10%, rgba(22,163,74,.22), transparent 60%),
-      radial-gradient(900px 520px at 88% -10%, rgba(220,38,38,.18), transparent 60%),
-      linear-gradient(180deg, var(--bg) 0%, var(--bg2) 55%, var(--bg) 100%);
-    line-height: 1.55;
-  }
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--max);margin:0 auto;padding:18px}
 
-  a{color:inherit;text-decoration:none}
-  .container{max-width:var(--max); margin:0 auto; padding: 18px}
-  .sr-only{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+/* Brand text */
+.brandname{font-weight:1000;white-space:nowrap}
+.brand-bug{color:var(--bug-red)}
+.brand-lawn{color:var(--lawn-green)}
+.brand-n{
+  background:linear-gradient(90deg,var(--bug-red),var(--lawn-green));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  padding:0 .08em;
+}
 
-  /* Brand text coloring */
-  .brandname{
-    font-weight: 1000;
-    letter-spacing: .2px;
-    line-height: 1;
-    white-space: nowrap;
-  }
-  .brand-bug{color: var(--bug-red)}
-  .brand-lawn{color: var(--lawn-green)}
-  .brand-n{
-    background: linear-gradient(90deg, var(--bug-red), var(--lawn-green));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-weight: 1000;
-    padding: 0 .08em; /* tiny spacing so gradient looks nice */
-  }
+/* Header */
+header{
+  position:sticky;top:0;z-index:50;
+  background:#ffffffcc;
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--border);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;gap:12px
+}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{
+  width:40px;height:40px;border-radius:12px;
+  background:linear-gradient(135deg,var(--bug-red),var(--lawn-green));
+  display:grid;place-items:center;
+  box-shadow:var(--shadow);
+}
+nav{display:none;gap:18px;font-weight:700;color:var(--muted)}
+nav a:hover{color:var(--text)}
 
-  /* Topbar */
-  header{
-    position: sticky; top: 0; z-index: 50;
-    backdrop-filter: blur(10px);
-    background: rgba(7,11,20,.75);
-    border-bottom: 1px solid rgba(255,255,255,.10);
-  }
-  .header-inner{
-    display:flex; align-items:center; justify-content:space-between; gap:12px;
-  }
-  .brand{
-    display:flex; align-items:center; gap:10px;
-  }
-  .mark{
-    width: 38px; height: 38px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, rgba(220,38,38,.85), rgba(22,163,74,.85));
-    box-shadow: 0 12px 28px rgba(0,0,0,.35);
-    display:grid; place-items:center;
-    border: 1px solid rgba(255,255,255,.12);
-  }
-  .brand small{display:block; color: var(--muted); font-weight: 800; line-height:1}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
 
-  nav{display:none; gap:18px; color: var(--muted); font-weight: 800}
-  nav a:hover{color: var(--text)}
-  .top-actions{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+/* Buttons */
+.btn{
+  padding:12px 18px;
+  border-radius:999px;
+  font-weight:900;
+  border:1px solid var(--border);
+  background:#fff;
+  cursor:pointer;
+}
+.btn:hover{box-shadow:var(--shadow)}
+.btn-lawn{
+  border-color:var(--lawn-green);
+  color:var(--lawn-green);
+}
+.btn-bug{
+  border-color:var(--bug-red);
+  color:var(--bug-red);
+}
 
-  .pill{
-    display:inline-flex; align-items:center; gap:8px;
-    padding: 10px 12px;
-    border-radius: 999px;
-    border: 1px solid rgba(255,255,255,.12);
-    background: rgba(255,255,255,.06);
-    font-weight: 900;
-  }
+/* Hero */
+.hero{
+  display:grid;gap:22px;
+  grid-template-columns:1fr;
+  padding:48px 0 20px;
+}
+.hero h1{
+  font-size:clamp(32px,4.5vw,54px);
+  margin:0;
+  line-height:1.05;
+}
+.hero p{color:var(--muted);max-width:70ch}
 
-  /* Buttons */
-  .btn{
-    display:inline-flex; align-items:center; justify-content:center; gap:10px;
-    padding: 12px 16px;
-    border-radius: 999px;
-    font-weight: 950;
-    border: 1px solid rgba(255,255,255,.14);
-    background: rgba(255,255,255,.06);
-    cursor:pointer;
-    transition: transform .12s ease, background .12s ease, border-color .12s ease;
-    user-select:none;
-  }
-  .btn:hover{transform: translateY(-1px); border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.09)}
-  .btn:active{transform: translateY(0)}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.badge{
+  padding:8px 12px;border-radius:999px;
+  border:1px solid var(--border);
+  background:#fff;
+  font-weight:800;font-size:13px;
+}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px}
+.dot.red{background:var(--bug-red)}
+.dot.green{background:var(--lawn-green)}
 
-  /* Theme buttons */
-  .btn-lawn{
-    border-color: rgba(22,163,74,.45);
-    background: linear-gradient(135deg, rgba(22,163,74,.24), rgba(22,163,74,.10));
-  }
-  .btn-lawn:hover{border-color: rgba(22,163,74,.70)}
+/* Cards */
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+.card-pad{padding:18px}
 
-  .btn-bug{
-    border-color: rgba(220,38,38,.45);
-    background: linear-gradient(135deg, rgba(220,38,38,.22), rgba(220,38,38,.10));
-  }
-  .btn-bug:hover{border-color: rgba(220,38,38,.70)}
+/* Quote */
+.quote h2{margin:0 0 6px}
+.quote p{margin:0 0 14px;color:var(--muted)}
 
-  /* Hero */
-  .hero{
-    padding: 44px 0 10px;
-    display:grid;
-    gap: 18px;
-    grid-template-columns: 1fr;
-    align-items:start;
-  }
-  .hero h1{
-    margin:0;
-    font-size: clamp(30px, 4.2vw, 54px);
-    line-height: 1.05;
-    letter-spacing: -0.8px;
-  }
-  .accent-green{color: var(--lawn-green)}
-  .accent-red{color: var(--bug-red)}
-  .hero p{
-    margin: 12px 0 0;
-    color: var(--muted);
-    max-width: 72ch;
-    font-size: clamp(15px, 1.2vw, 18px);
-  }
+form{display:grid;gap:10px}
+.row2{display:grid;gap:10px;grid-template-columns:1fr}
 
-  .badges{display:flex; flex-wrap:wrap; gap:10px; margin-top: 16px}
-  .badge{
-    display:inline-flex; align-items:center; gap:8px;
-    padding: 10px 12px;
-    border-radius: 999px;
-    background: rgba(255,255,255,.06);
-    border: 1px solid rgba(255,255,255,.10);
-    font-weight: 900;
-    font-size: 13px;
-  }
-  .badge .dot{
-    width: 9px; height: 9px; border-radius: 999px;
-    display:inline-block;
-  }
-  .dot.green{background: var(--lawn-green)}
-  .dot.red{background: var(--bug-red)}
-  .badge span{color: var(--muted); font-weight: 800}
+label{font-size:12px;font-weight:900;color:var(--muted)}
+input,select,textarea{
+  padding:12px;border-radius:12px;
+  border:1px solid var(--border);
+  font-size:14px;
+}
+textarea{min-height:90px}
 
-  /* Cards */
-  .grid{
-    display:grid; gap:14px;
-    grid-template-columns: 1fr;
-    margin-top: 22px;
-  }
-  .card{
-    border-radius: var(--radius);
-    background: var(--card);
-    border: 1px solid rgba(255,255,255,.10);
-    box-shadow: var(--shadow);
-    overflow:hidden;
-  }
-  .card-pad{padding: 18px}
+/* Sections */
+.section{margin-top:56px}
+.section h2{font-size:28px;margin-bottom:10px}
+.lead{color:var(--muted);max-width:70ch}
 
-  /* Quote card */
-  .quote{
-    padding: 18px;
-    background:
-      radial-gradient(750px 300px at 25% 0%, rgba(22,163,74,.22), transparent 60%),
-      radial-gradient(750px 300px at 85% 0%, rgba(220,38,38,.18), transparent 60%),
-      rgba(255,255,255,.06);
-  }
-  .quote h2{margin:0 0 6px; font-size: 20px}
-  .quote p{margin:0 0 14px; color: var(--muted)}
+.cards3{display:grid;gap:18px}
+.service h3{margin:6px 0}
+.service p{color:var(--muted)}
 
-  form{display:grid; gap:10px}
-  .row2{display:grid; gap:10px; grid-template-columns: 1fr}
+.tag{
+  font-size:12px;font-weight:900;
+  display:inline-flex;align-items:center;
+  gap:6px;
+}
 
-  label{
-    font-size: 12px;
-    color: var(--muted);
-    font-weight: 900;
-    letter-spacing: .2px;
-  }
-  input, select, textarea{
-    width:100%;
-    padding: 12px;
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,.12);
-    background: rgba(7,11,20,.55);
-    color: var(--text);
-    outline:none;
-  }
-  input:focus, select:focus, textarea:focus{
-    border-color: rgba(22,163,74,.55);
-    box-shadow: 0 0 0 3px rgba(22,163,74,.12);
-  }
-  textarea{min-height: 92px; resize: vertical}
+/* Footer */
+footer{
+  margin-top:60px;
+  padding:20px 0;
+  border-top:1px solid var(--border);
+  color:var(--muted);
+  font-size:14px;
+}
 
-  .form-actions{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top: 4px}
-  .note{color: var(--muted); font-size: 12px}
-
-  /* Sections */
-  .section{margin-top: 34px}
-  .section h2{margin:0 0 10px; font-size: 26px}
-  .lead{margin:0 0 18px; color: var(--muted); max-width: 78ch}
-
-  .cards3{display:grid; gap:14px; grid-template-columns: 1fr}
-  .service{
-    padding: 16px;
-    border-radius: var(--radius);
-    border: 1px solid rgba(255,255,255,.10);
-    background: var(--card);
-  }
-  .service h3{margin: 6px 0 6px; font-size: 18px}
-  .service p{margin: 0; color: var(--muted)}
-
-  .tag{
-    display:inline-flex; align-items:center; gap:8px;
-    padding: 8px 10px;
-    border-radius: 999px;
-    font-size: 12px;
-    font-weight: 950;
-    border: 1px solid rgba(255,255,255,.12);
-    background: rgba(7,11,20,.35);
-    color: var(--muted);
-    width: fit-content;
-  }
-  .tag .dot{width:9px;height:9px;border-radius:999px}
-
-  /* Reviews */
-  .reviews{display:grid; gap:14px; grid-template-columns: 1fr}
-  .review{padding: 16px}
-  .stars{color: #ffd166; letter-spacing: 1px}
-  .review p{margin:10px 0 0; color: var(--muted)}
-  .review .who{margin-top:10px; font-weight: 1000}
-
-  /* FAQ */
-  details{
-    border: 1px solid rgba(255,255,255,.10);
-    border-radius: 14px;
-    background: var(--card);
-    padding: 12px 14px;
-  }
-  summary{cursor:pointer; font-weight: 1000}
-  details p{margin: 10px 0 0; color: var(--muted)}
-
-  /* Footer */
-  footer{
-    margin-top: 44px;
-    padding-top: 18px;
-    border-top: 1px solid rgba(255,255,255,.10);
-    color: var(--muted);
-    display:flex; flex-wrap:wrap; gap:12px;
-    justify-content: space-between;
-    align-items:center;
-    font-size: 13px;
-  }
-  .mini-links{display:flex; gap:14px; flex-wrap:wrap}
-  .mini-links a:hover{color: var(--text)}
-
-  /* Toast */
-  .toast{
-    position: fixed;
-    right: 16px;
-    bottom: 16px;
-    max-width: 360px;
-    background: rgba(7,11,20,.92);
-    border: 1px solid rgba(255,255,255,.14);
-    border-radius: 14px;
-    padding: 12px 12px;
-    box-shadow: var(--shadow);
-    display:none;
-    z-index: 999;
-  }
-  .toast strong{display:block}
-  .toast span{color: var(--muted); font-size: 13px}
-
-  @media (min-width: 860px){
-    nav{display:flex}
-    .hero{grid-template-columns: 1.05fr .95fr; gap:18px; align-items:stretch}
-    .grid{grid-template-columns: 1.05fr .95fr; align-items:stretch}
-    .row2{grid-template-columns: 1fr 1fr}
-    .cards3{grid-template-columns: repeat(3, 1fr)}
-    .reviews{grid-template-columns: repeat(3, 1fr)}
-  }
-  @media (prefers-reduced-motion: reduce){
-    .btn{transition:none}
-    .btn:hover{transform:none}
-  }
+/* Responsive */
+@media(min-width:900px){
+  nav{display:flex}
+  .hero{grid-template-columns:1.1fr .9fr}
+  .row2{grid-template-columns:1fr 1fr}
+  .cards3{grid-template-columns:repeat(3,1fr)}
+}
 </style>
 </head>
 
 <body>
+
 <header>
   <div class="container header-inner">
     <div class="brand">
-      <div class="mark" aria-hidden="true">
-        <!-- Simple lawn+bug mark -->
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M6 21c6-1 11-6 12-12C13 9 9 13 8 18c-.2 1.2-.6 2.2-2 3Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
-          <path d="M12 11c2 0 3.5 1.6 3.5 3.6v1.2c0 2-1.6 3.6-3.5 3.6S8.5 17.8 8.5 15.8v-1.2c0-2 1.6-3.6 3.5-3.6Z" stroke="white" stroke-width="2"/>
-        </svg>
-      </div>
-
+      <div class="logo"></div>
       <div>
-        <div class="brandname" aria-label="Bug N Lawn">
-          <span class="brand-bug">Bug</span>
-          <span class="brand-n">N</span>
-          <span class="brand-lawn">Lawn</span>
+        <div class="brandname">
+          <span class="brand-bug">Bug</span><span class="brand-n">N</span><span class="brand-lawn">Lawn</span>
         </div>
         <small>Pest • Lawn Insects • Fertilizing • Ornamentals</small>
       </div>
     </div>
 
-    <nav aria-label="Primary">
+    <nav>
       <a href="#services">Services</a>
       <a href="#bundles">Bundles</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#faq">FAQ</a>
+      <a href="#quote">Quote</a>
     </nav>
 
-    <div class="top-actions">
-      <a class="pill" href="tel:+18005551234" aria-label="Call us">(800) 555-1234</a>
-      <a class="btn btn-lawn" href="#quote">Get a Free Quote</a>
+    <div class="actions">
+      <a href="#quote" class="btn btn-lawn">Free Quote</a>
+      <a href="tel:+18005551234" class="btn btn-bug">(800) 555-1234</a>
     </div>
   </div>
 </header>
 
 <main class="container">
-  <!-- HERO -->
-  <section class="hero" aria-label="Hero">
-    <div>
-      <h1>
-        <span class="accent-green">Greener lawn.</span>
-        <span class="accent-red">Fewer bugs.</span>
-        <span>That’s </span>
-        <span class="brandname">
-          <span class="brand-bug">Bug</span><span class="brand-n">N</span><span class="brand-lawn">Lawn</span>
-        </span>.
-      </h1>
 
-      <p>
-        Professional <strong class="accent-red">pest control</strong>, <strong class="accent-red">lawn insect control</strong>,
-        and <strong class="accent-green">lawn & ornamental fertilizing</strong>. Clear plans, consistent results,
-        and treatments applied according to label directions.
-      </p>
+<section class="hero">
+  <div>
+    <h1>
+      <span class="brand-bug">Bugs</span> under control.<br>
+      <span class="brand-lawn">Lawns</span> done right.
+    </h1>
 
-      <div class="badges" aria-label="Trust badges">
-        <div class="badge"><span class="dot red"></span>Home pests <span>inside & out</span></div>
-        <div class="badge"><span class="dot red"></span>Lawn insects <span>fire ants, chinch bugs, more</span></div>
-        <div class="badge"><span class="dot green"></span>Fertilizing <span>& weed control</span></div>
-        <div class="badge"><span class="dot green"></span>Ornamentals <span>shrubs & landscape</span></div>
-      </div>
-
-      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;">
-        <a class="btn btn-lawn" href="#quote">Get My Quote</a>
-        <a class="btn btn-bug" href="#services">See Services</a>
-      </div>
-
-      <div class="grid">
-        <div class="card">
-          <div class="card-pad">
-            <h3 style="margin:0 0 10px;">Why homeowners choose Bug N Lawn</h3>
-            <ul style="margin:0; padding-left:18px; color:var(--muted); font-weight:700;">
-              <li><span class="accent-green" style="font-weight:950;">Lawn-first</span> timing for nutrition and weeds</li>
-              <li><span class="accent-red" style="font-weight:950;">Targeted pest control</span> for entry points & hotspots</li>
-              <li>Bundle savings: one schedule for home + lawn</li>
-              <li>Clear communication and honest recommendations</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card quote" id="quote">
-          <h2>Free quote in minutes</h2>
-          <p>Select pest, lawn, lawn insects, or a bundle—and we’ll send pricing + availability.</p>
-
-          <form id="quoteForm" novalidate>
-            <div class="row2">
-              <div>
-                <label for="name">Full name</label>
-                <input id="name" name="name" autocomplete="name" placeholder="Your name" required />
-              </div>
-              <div>
-                <label for="phone">Phone</label>
-                <input id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="(555) 123-4567" required />
-              </div>
-            </div>
-
-            <div class="row2">
-              <div>
-                <label for="zip">ZIP code</label>
-                <input id="zip" name="zip" inputmode="numeric" autocomplete="postal-code" placeholder="33952" required />
-              </div>
-              <div>
-                <label for="interest">I need help with</label>
-                <select id="interest" name="interest" required>
-                  <option value="" selected disabled>Select one</option>
-                  <option>Pest Control (Home)</option>
-                  <option>Lawn Insect Control</option>
-                  <option>Lawn Fertilizing & Weed Control</option>
-                  <option>Ornamentals / Shrubs</option>
-                  <option>Bundle: Pest + Lawn</option>
-                  <option>Not sure</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="row2">
-              <div>
-                <label for="pest">If pests: what are you seeing?</label>
-                <select id="pest" name="pest">
-                  <option value="" selected>Choose (optional)</option>
-                  <option>Ants</option>
-                  <option>Roaches</option>
-                  <option>Spiders</option>
-                  <option>Wasps</option>
-                  <option>Rodents</option>
-                  <option>Other</option>
-                </select>
-              </div>
-
-              <div>
-                <label for="lawn">If lawn: what do you need help with?</label>
-                <select id="lawn" name="lawn">
-                  <option value="" selected>Choose (optional)</option>
-                  <option>Fertilizing & nutrients</option>
-                  <option>Weed control</option>
-                  <option>Lawn insects (chinch bugs, armyworms, etc.)</option>
-                  <option>Fire ants</option>
-                  <option>Improve bare or stressed areas</option>
-                  <option>Not sure</option>
-                </select>
-              </div>
-            </div>
-
-            <div>
-              <label for="details">Details (optional)</label>
-              <textarea id="details" name="details" placeholder="Tell us what you’re seeing (inside/outside, lawn type, irrigation, pets, etc.)."></textarea>
-            </div>
-
-            <div class="form-actions">
-              <button class="btn btn-lawn" type="submit">Request Quote</button>
-              <a class="btn btn-bug" href="tel:+18005551234">Call Now</a>
-              <span class="note">By submitting, you agree to be contacted about your request.</span>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="section" id="services" aria-label="Services">
-    <h2>Services</h2>
-    <p class="lead">Green represents lawn & ornamentals. Red represents bugs and pest control.</p>
-
-    <div class="cards3">
-      <div class="service">
-        <div class="tag"><span class="dot" style="background:var(--bug-red)"></span> Pest Control</div>
-        <h3 class="accent-red">Home Pest Protection</h3>
-        <p>
-          Targeted treatments for common household pests (ants, roaches, spiders, silverfish, and more).
-          Focused on entry points and hotspots—inside and outside as needed.
-        </p>
-      </div>
-
-      <div class="service">
-        <div class="tag"><span class="dot" style="background:var(--bug-red)"></span> Lawn Insects</div>
-        <h3 class="accent-red">Lawn Insect Control</h3>
-        <p>
-          Turf pest treatments for <strong>fire ants</strong>, chinch bugs, armyworms, sod webworms,
-          mole crickets, fleas, and ticks. Applied to turf/soil where insects live and feed.
-        </p>
-      </div>
-
-      <div class="service">
-        <div class="tag"><span class="dot" style="background:var(--lawn-green)"></span> Lawn & Ornamental</div>
-        <h3 class="accent-green">Fertilizing, Weeds, & Ornamentals</h3>
-        <p>
-          Seasonal fertilization and weed control to improve color, density, and overall health.
-          Optional shrub and ornamental support for a cleaner landscape.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- BUNDLES -->
-  <section class="section" id="bundles" aria-label="Bundles">
-    <h2>Bundle & save</h2>
-    <p class="lead">
-      One schedule for everything: <span class="accent-red" style="font-weight:950;">bugs</span> +
-      <span class="accent-green" style="font-weight:950;">lawn</span>.
+    <p>
+      <strong class="brandname">
+        <span class="brand-bug">Bug</span><span class="brand-n">N</span><span class="brand-lawn">Lawn</span>
+      </strong>
+      delivers professional pest control, lawn insect control,
+      and lawn & ornamental fertilizing — one company, one schedule.
     </p>
 
-    <div class="cards3">
-      <div class="service">
-        <div class="tag"><span class="dot" style="background:var(--bug-red)"></span> + <span class="dot" style="background:var(--bug-red)"></span></div>
-        <h3 class="accent-red">Pest + Lawn Insects</h3>
-        <p>Home perimeter pest control plus seasonal lawn insect treatments for fire ants, fleas/ticks, and turf pests.</p>
-      </div>
-
-      <div class="service">
-        <div class="tag"><span class="dot" style="background:var(--lawn-green)"></span> + <span class="dot" style="background:var(--bug-red)"></span></div>
-        <h3><span class="accent-green">Lawn Care</span> + <span class="accent-red">Insects</span></h3>
-        <p>Fertilization and weed control with added insect protection to keep turf healthier through the season.</p>
-      </div>
-
-      <div class="service">
-        <div class="tag"><span class="dot" style="background:var(--bug-red)"></span> + <span class="dot" style="background:var(--lawn-green)"></span></div>
-        <h3>Complete <span class="accent-red">Home</span> & <span class="accent-green">Lawn</span></h3>
-        <p>Pest control, lawn insects, fertilizing, and ornamentals—one provider, one plan, better value.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- REVIEWS -->
-  <section class="section" id="reviews" aria-label="Reviews">
-    <h2>What customers say</h2>
-    <p class="lead">Replace these with your real reviews once you’ve collected them.</p>
-
-    <div class="reviews">
-      <div class="card review">
-        <div class="stars" aria-label="5 star rating">★★★★★</div>
-        <p>“Our lawn thickened up and the fire ant activity dropped fast. Easy scheduling and great communication.”</p>
-        <div class="who">— Jamie R.</div>
-      </div>
-
-      <div class="card review">
-        <div class="stars" aria-label="5 star rating">★★★★★</div>
-        <p>“No pushy upsells. They explained what the lawn needed and handled roaches inside the same week.”</p>
-        <div class="who">— Chris T.</div>
-      </div>
-
-      <div class="card review">
-        <div class="stars" aria-label="5 star rating">★★★★★</div>
-        <p>“Bundle is worth it—one company for everything. Lawn looks better and bugs stayed under control.”</p>
-        <div class="who">— Alex M.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section" id="faq" aria-label="FAQ">
-    <h2>FAQ</h2>
-    <p class="lead">Quick answers for home pests, lawn insects, and lawn care.</p>
-
-    <div style="display:grid; gap:12px;">
-      <details>
-        <summary>Do you treat lawn insects like fire ants and chinch bugs?</summary>
-        <p>
-          Yes—lawn insect treatments can target common turf pests such as fire ants, chinch bugs, armyworms, sod webworms,
-          and other seasonal issues depending on your area and conditions.
-        </p>
-      </details>
-
-      <details>
-        <summary>Can I bundle pest control with lawn fertilizing?</summary>
-        <p>
-          Absolutely. Bundles are popular because you get one schedule, consistent service, and better overall value.
-        </p>
-      </details>
-
-      <details>
-        <summary>Is it safe for kids and pets?</summary>
-        <p>
-          We apply products according to label directions and provide post-service guidance.
-          If you have special concerns, tell us in the quote form so we can recommend options.
-        </p>
-      </details>
-
-      <details>
-        <summary>How quickly can you come out?</summary>
-        <p>
-          Availability varies by week, but we aim for fast communication and scheduling whenever possible.
-        </p>
-      </details>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer aria-label="Footer">
-    <div>
-      © <span id="year"></span>
-      <span class="brandname" style="margin-left:6px;">
-        <span class="brand-bug">Bug</span><span class="brand-n">N</span><span class="brand-lawn">Lawn</span>
-      </span>
-      • Licensed & insured
+    <div class="badges">
+      <div class="badge"><span class="dot red"></span>Home Pests</div>
+      <div class="badge"><span class="dot red"></span>Lawn Insects</div>
+      <div class="badge"><span class="dot green"></span>Fertilizing</div>
+      <div class="badge"><span class="dot green"></span>Ornamentals</div>
     </div>
 
-    <div class="mini-links">
-      <a href="#services">Services</a>
-      <a href="#bundles">Bundles</a>
-      <a href="#quote">Quote</a>
-      <a href="#" onclick="openPolicy(event)">Privacy</a>
+    <div style="margin-top:18px">
+      <a href="#quote" class="btn btn-lawn">Get My Quote</a>
+      <a href="#services" class="btn btn-bug">View Services</a>
+    </div>
+  </div>
+
+  <div class="card card-pad quote" id="quote">
+    <h2>Free Quote</h2>
+    <p>Tell us what you need — pest, lawn, or both.</p>
+
+    <form>
+      <div class="row2">
+        <div>
+          <label>Name</label>
+          <input placeholder="Your name" required>
+        </div>
+        <div>
+          <label>Phone</label>
+          <input placeholder="(555) 123-4567" required>
+        </div>
+      </div>
+
+      <div class="row2">
+        <div>
+          <label>ZIP</label>
+          <input placeholder="33952" required>
+        </div>
+        <div>
+          <label>Service Needed</label>
+          <select required>
+            <option disabled selected>Select</option>
+            <option>Pest Control</option>
+            <option>Lawn Insect Control</option>
+            <option>Lawn Fertilizing & Weeds</option>
+            <option>Bundle: Pest + Lawn</option>
+          </select>
+        </div>
+      </div>
+
+      <label>Details (optional)</label>
+      <textarea placeholder="Fire ants, chinch bugs, weeds, ants inside, etc."></textarea>
+
+      <button class="btn btn-lawn" type="submit">Submit</button>
+    </form>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <h2>Services</h2>
+  <p class="lead">Red = pests. Green = lawn & ornamentals.</p>
+
+  <div class="cards3">
+    <div class="card card-pad service">
+      <div class="tag"><span class="dot red"></span>Pest Control</div>
+      <h3 class="brand-bug">Home Pest Protection</h3>
+      <p>Ants, roaches, spiders, wasps, and more — targeted interior & exterior treatments.</p>
     </div>
 
-    <div style="flex-basis:100%; margin-top:6px;">
-      Treatments are applied according to label directions.
+    <div class="card card-pad service">
+      <div class="tag"><span class="dot red"></span>Lawn Insects</div>
+      <h3 class="brand-bug">Lawn Insect Control</h3>
+      <p>Fire ants, chinch bugs, armyworms, mole crickets, fleas & ticks.</p>
     </div>
-  </footer>
+
+    <div class="card card-pad service">
+      <div class="tag"><span class="dot green"></span>Lawn & Ornamental</div>
+      <h3 class="brand-lawn">Fertilizing & Weed Control</h3>
+      <p>Seasonal fertilization, weed control, and ornamental care.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span>
+  <span class="brandname">
+    <span class="brand-bug">Bug</span><span class="brand-n">N</span><span class="brand-lawn">Lawn</span>
+  </span>
+  • Licensed & Insured • Treatments applied according to label directions
+</footer>
+
 </main>
 
-<div class="toast" id="toast" role="status" aria-live="polite">
-  <strong id="toastTitle">Request received</strong>
-  <span id="toastMsg">We’ll contact you shortly.</span>
-</div>
-
 <script>
-  // Year
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  // Toast
-  const toast = document.getElementById("toast");
-  const toastTitle = document.getElementById("toastTitle");
-  const toastMsg = document.getElementById("toastMsg");
-  function showToast(title, msg){
-    toastTitle.textContent = title;
-    toastMsg.textContent = msg;
-    toast.style.display = "block";
-    clearTimeout(showToast._t);
-    showToast._t = setTimeout(() => toast.style.display = "none", 4200);
-  }
-
-  // Form submit (DEMO)
-  // Hook to your backend by replacing the demo section with a fetch("/api/lead") call.
-  const form = document.getElementById("quoteForm");
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const payload = {
-      name: document.getElementById("name").value.trim(),
-      phone: document.getElementById("phone").value.trim(),
-      zip: document.getElementById("zip").value.trim(),
-      interest: document.getElementById("interest").value,
-      pest: document.getElementById("pest").value,
-      lawn: document.getElementById("lawn").value,
-      details: document.getElementById("details").value.trim()
-    };
-
-    const digits = payload.phone.replace(/\D/g,"");
-    if (!payload.name || digits.length < 10 || !payload.zip || !payload.interest){
-      showToast("Check your info", "Please enter name, valid phone, ZIP, and select what you need help with.");
-      return;
-    }
-
-    showToast("Request received ✅", "We’ll contact you soon with pricing + availability.");
-    form.reset();
-  });
-
-  function openPolicy(e){
-    e.preventDefault();
-    alert("Privacy Policy placeholder:\\n\\nAdd your privacy policy here (data use, contact consent, etc.).");
-  }
-  window.openPolicy = openPolicy;
+document.getElementById("year").textContent=new Date().getFullYear();
 </script>
+
 </body>
 </html>
